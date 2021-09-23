@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
@@ -9,14 +10,22 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div>
+                <h1>Home</h1>
+                <Link to="/about">About</Link>
+              </div>
+            </Route>
+            <Route exact path="/about">
+              <div>
+                <h1>About</h1>
+                <Link to="/">Home</Link>
+              </div>
+            </Route>
+          </Switch>
+        </Router>
       </header>
     </div>
   );

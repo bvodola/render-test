@@ -1,0 +1,11 @@
+services:
+  - type: web
+      name: Render Test 3
+      env: static
+      buildCommand: yarn build
+      staticPublishPath: ./build
+      pullRequestPreviewsEnabled: true # optional
+      headers:
+        - path: /*
+          name: X-Frame-Options
+          value: sameorigin
