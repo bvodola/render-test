@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cra-docker
+    env: docker
+    repo: https://github.com/bvodola/render-test # optional
+    branch: master
+    dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
